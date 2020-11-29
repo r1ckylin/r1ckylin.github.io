@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Your Special Day</title>
+</head>
+<body>
+    <div id="countdown">
+        <div class="container">
+            <h2><span>Countdown to Your</span> Birthday</h2>
+            <div class="countdown">
+                <div id="day"></div>
+                <div id="hour"></div>
+                <div id="minute"></div>
+                <div id="second"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    var countdown = new Date('Sep 13 2020 00:00:00').getTime();
+    var now;
+    // var now = new Date().getTime();
+    
+    setInterval(function(){
+        now = new Date().getTime();
+        
+        if (now >= countdown) {
+        // if (now < countdown) {
+            // window.location.replace("LoveYouToo.html");
+            // window.location.replace("LoveYouToo.html");
+            if(navigator.userAgent.match(/Android/i)||(navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))){
+                location.replace("LoveYouToo.html");
+                // document.location="LoveYouToo.html";      
+            }
+            else {
+                window.location.replace("LoveYouToo.html");
+            }
+            // document.getElementById("countdown").style.display = "none";
+        } else {
+            // document.getElementById("countdown").style.display = "block";
+            setInterval(function() {
+                birthday();
+            }, 1000);
+        }
+    }, 1000);
+
+</script>
